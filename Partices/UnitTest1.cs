@@ -12,6 +12,7 @@ public class Tests
     [SetUp]
     public void Setup()
     {
+        Console.WriteLine("test value");
     }
 
     [Test]
