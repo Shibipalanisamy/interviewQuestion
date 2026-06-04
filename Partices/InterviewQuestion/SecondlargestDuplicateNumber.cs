@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static NUnit.Framework.Constraints.Tolerance;
 
 namespace Partices.InterviewQuestion
 {
@@ -83,13 +84,29 @@ namespace Partices.InterviewQuestion
             }
             Console.WriteLine(reverese);
             var data = word.GroupBy(x => x).Select(x => x.Key).OrderByDescending(y => y).ToList();
-            Console.Write(data.);
+            //Console.Write(data.);
 
             unchecked
             {
                 int i = int.MaxValue;
                 i = i + 1;
 
+            }
+        }
+        public void sortnumber()
+        {
+            string[] ss = ["orange", "apple", "kiwi", "grapes","pinneaple"];
+
+            var data=ss.GroupBy(s=>s.Length).Select(x => new { key = x.Key, value = x.ToList() }).OrderByDescending(x => x.key).ToList();
+            foreach(var test in data)
+            {
+                Console.WriteLine(test.key+" "+string.Join(',',test.value));
+            }
+            string va = "aahvikv";
+            var dupliacte=va.GroupBy(c => c).Where(x => x.Count() > 1).Select(x => x.Key).ToList();
+
+            foreach (var dd in dupliacte) {
+                Console.WriteLine(dd);
             }
         }
 

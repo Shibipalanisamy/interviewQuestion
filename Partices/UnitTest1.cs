@@ -1,7 +1,11 @@
 ﻿using NUnit.Framework.Internal;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Edge;
 using Partices.Basic;
 using Partices.InterviewQuestion;
+
 namespace Partices.Basic;
+
 
 public class Tests
 {
@@ -29,6 +33,12 @@ public class Tests
         BankAccount Bankbalance = new BankAccount(1000);
         Bankbalance.deposite = 100;
         Console.WriteLine(Bankbalance.deposite);
+
+        A a= new B();
+        a.test();
+        B b = (B)a;
+        b.test();
+        
         }
     [Test]
     public void test2()
@@ -52,5 +62,34 @@ public class Tests
         ss.revwersetheString();
         Console.WriteLine("----------- ----");
         ss.splitVowles();
+    }
+    [Test]
+    public void test3()
+    {
+        SecondlargestDuplicateNumber S = new SecondlargestDuplicateNumber();
+        S.sortnumber();
+
+        int i = 10;
+        var m= ExtensionMethodClass.ExtensionMethod(i);
+        Console.WriteLine(m);
+    }
+    [Test]
+    public void test4()
+    {
+        WebDriver driver = new EdgeDriver();
+        driver.Url = "https://practice.expandtesting.com/";
+
+        
+        driver.SwitchTo().Window(driver.WindowHandles.Last());
+
+        Console.WriteLine(driver.WindowHandles.Count());
+
+        driver.Close();
+    }
+    [Test]
+    public void test5()
+    {StringsBasedQuestions st= new StringsBasedQuestions();
+        st.DuplicateValue();
+        
     }
 }
